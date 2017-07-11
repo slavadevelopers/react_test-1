@@ -17,9 +17,7 @@ ReactDOM.render(
     <Provider store={ store }>
         <BrowserRouter history={ history }>
             <div>
-                <App />
-                { routes }
-                <App />
+                <App main={ routes }/>
             </div>
         </BrowserRouter>
     </Provider>,
