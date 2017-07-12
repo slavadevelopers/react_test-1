@@ -1,5 +1,6 @@
 import React from 'react';
-import { Header } from './components/header/index';
+import Header from './components/header/index';
+import Footer from './components/footer/index';
 
 export default class App extends React.Component {
 
@@ -7,9 +8,10 @@ export default class App extends React.Component {
     
     render() {
         return (
-            <div className='container-fluid'>
+            <div>
                 <Header />
                 { this.props.main }
+                <Footer />
             </div>
         );
     }

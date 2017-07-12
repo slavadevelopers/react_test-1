@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { aT } from './actions';
+import { choiceElement } from './actions';
+import { ListTime } from '../../components/list-time/index';
+import classnames from 'classnames';
+import './list.less';
 
 class List extends React.Component {
 
@@ -10,15 +13,28 @@ class List extends React.Component {
         dispatch: PropTypes.func.isRequired
     };
 
-    clickOnBtn() {
-        this.props.dispatch(aT(this.props.list.list));
+    choiceElement(event) {
+        this.props.dispatch(choiceElement(this.props.list.item, event));
+    }
+
+    renderList(item) {
+        const classItem = classnames({
+            'active': item.active,
+            'disable': item.disable
+        });
+        return (
+            <li className={ classItem } key={ item.id } onClick={ this.choiceElement.bind(this) }>{ item.text }</li>
+        );
     }
 
     render() {
+        console.log('this.props.list.time', this.props.list.time);
         return (
             <div>
-                <h3>List</h3>
-                <button onClick={ this.clickOnBtn.bind(this) }>Click List</button>
+                <ul>
+                    { this.props.list.item.map(this.renderList.bind(this)) }
+                </ul>
+                { this.props.list.time ? <ListTime /> : null }
             </div>
         );
     }

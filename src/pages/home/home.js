@@ -20,9 +20,9 @@ class HomePage extends React.Component {
     
     render() {
         return (
-            <div className='row-fluid b-home'>
-                <button onClick={ this.clickOnBtn.bind(this) }>Click</button>
+            <div className="container-fluid">
                 <List />
+
             </div>
         );
     }

@@ -1,9 +1,11 @@
-export const A_T = 'A_T';
+export const CHOISE_ELEMENT = 'CHOISE_ELEMENT';
 
-export function aT(list) {
-    console.log(list);
+export function choiceElement(item, event) {
+    const textElement = event.target.innerHTML;
+    const id = item.filter((item) => item.text === textElement)[0].id - 1;
+
     return {
-        type: A_T,
-        list
+        type: CHOISE_ELEMENT,
+        item, id
     };
 }
