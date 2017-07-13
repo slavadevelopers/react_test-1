@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { choiceElement } from './actions';
+import { choiceElement, changeInputList } from './actions';
 import { ListTime } from '../../components/list-time/index';
 import classnames from 'classnames';
 import './list.less';
@@ -27,14 +27,19 @@ class List extends React.Component {
         );
     }
 
+    changeChecked() {
+        this.props.dispatch(changeInputList(this.props.list.inputList));
+    }
+
     render() {
-        console.log('this.props.list.time', this.props.list.time);
         return (
             <div>
                 <ul>
                     { this.props.list.item.map(this.renderList.bind(this)) }
                 </ul>
-                { this.props.list.time ? <ListTime /> : null }
+                { this.props.list.inputListNone ? <label><input type="checkbox" checked={ this.props.list.inputList }
+                    onChange={ this.changeChecked.bind(this) }/>Покупаю подписку в подаро</label> : null }
+                { this.props.list.time ? <ListTime extend={ this.props.list.extend } /> : null }
             </div>
         );
     }
