@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import classnames from 'classnames';
 import { choiceElementTime, changeListTime, validateChecked } from './actions';
 import { Total } from '../total/index';
+import './listitem.less';
 
 class ListTime extends React.Component {
 
@@ -18,7 +19,7 @@ class ListTime extends React.Component {
     }
 
     renderListTime(item) {
-        const classItem = classnames({
+        const classItem = classnames('list-item', {
             'active': item.active,
             'disable': item.disable
         });
@@ -34,7 +35,8 @@ class ListTime extends React.Component {
     render() {
         return (
             <div>
-                <ul>
+                <h2>На какой срок</h2>
+                <ul className="list">
                     { this.props.listTime.itemTime.map(this.renderListTime.bind(this)) }
                 </ul>
                 { this.props.extend ? <label><input type="checkbox" checked={ this.props.listTime.inputListTime }

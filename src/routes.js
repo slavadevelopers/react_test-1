@@ -7,6 +7,7 @@ import ErrorPage from './pages/error/index';
 export default (
         <Switch>
             { HomeRoutes }
-            <Route path='*' component={ ErrorPage } />
+
+            <Route component={ ErrorPage } />
         </Switch>
 );

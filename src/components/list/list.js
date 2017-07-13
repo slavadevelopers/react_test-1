@@ -17,13 +17,14 @@ class List extends React.Component {
         this.props.dispatch(choiceElement(this.props.list.item, event));
     }
 
-    renderList(item) {
-        const classItem = classnames({
+    renderList(item, id) {
+        const classItem = classnames(`list-item ${ this.props.list.item[id].text }`, {
             'active': item.active,
             'disable': item.disable
         });
         return (
-            <li className={ classItem } key={ item.id } onClick={ this.choiceElement.bind(this) }>{ item.text }</li>
+            <li className={ classItem } key={ item.id } onClick={ this.choiceElement.bind(this) }>
+                { item.text }</li>
         );
     }
 
@@ -34,7 +35,8 @@ class List extends React.Component {
     render() {
         return (
             <div>
-                <ul>
+                <h2>Выберети способ оплаты</h2>
+                <ul className="list">
                     { this.props.list.item.map(this.renderList.bind(this)) }
                 </ul>
                 { this.props.list.inputListNone ? <label><input type="checkbox" checked={ this.props.list.inputList }

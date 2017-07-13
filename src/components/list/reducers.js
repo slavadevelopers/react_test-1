@@ -4,45 +4,52 @@ const initialState = {
     item: [
         {
             id: 1,
-            text: '1text',
+            text: 'visa',
             active: false,
-            disable: false
+            disable: false,
+            src: ''
         },
         {
             id: 2,
-            text: '2text',
+            text: 'yandex',
             active: false,
-            disable: false
+            disable: false,
+            src: ''
         },
         {
             id: 3,
-            text: '3text',
+            text: 'paypal',
             active: false,
-            disable: false
+            disable: false,
+            src: ''
         },
         {
             id: 4,
-            text: '4text',
+            text: 'webmoney',
             active: false,
-            disable: false
+            disable: false,
+            src: ''
         },
         {
             id: 5,
-            text: '5text',
+            text: 'sms',
             active: false,
-            disable: false
+            disable: false,
+            src: 'SMS'
         },
         {
             id: 6,
-            text: '6text',
+            text: 'qiwi',
             active: false,
-            disable: false
+            disable: false,
+            src: ''
         },
         {
             id: 7,
-            text: '7text',
+            text: 'gift',
             active: false,
-            disable: false
+            disable: false,
+            src: 'Подарочный код'
         }
     ],
     time: false,
@@ -63,12 +70,12 @@ function listReducer(state = initialState, action) {
                     state.item[i].active = true;
                 }
             });
-            if (action.textElement == '7text') {
+            if (action.textElement == 'gift') {
                 state.inputListNone = false;
             } else {
                 state.inputListNone = true;
             }
-            if (action.textElement == '1text' || action.textElement == '2text' || action.textElement == '3text') {
+            if (action.textElement == 'yandex' || action.textElement == 'paypal' || action.textElement == 'sms') {
                 state.extend = true;
             } else {
                 state.extend = false;
@@ -89,7 +96,7 @@ function listReducer(state = initialState, action) {
             state.inputList = !state.inputList;
             if (state.inputList) {
                 const filterArray = state.item.filter((item) => {
-                    return item.text !== '7text';
+                    return item.text !== 'gift';
                 });
                 state.extend = false;
                 return Object.assign({}, state, {

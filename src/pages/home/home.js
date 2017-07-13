@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addTodo } from './actions';
 import { List } from '../../components/list/index'
-import './styles.less';
+import './home.less';
 
 class HomePage extends React.Component {
     
@@ -20,7 +20,7 @@ class HomePage extends React.Component {
     
     render() {
         return (
-            <div className="container-fluid">
+            <div className="page-container">
                 <List />
 
             </div>

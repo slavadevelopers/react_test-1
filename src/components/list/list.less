@@ -1,7 +1,58 @@
 .active {
-  color: red;
 }
 
 .disable {
-  color: lightgrey;
+  filter: blur(3px);
+}
+
+.list {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  display: block;
+}
+
+.list-item {
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 20px;
+  width: 20%;
+  height: 200px;
+  padding: 10px;
+  margin-right: 5%;
+  border: 2px solid grey;
+  &:nth-child(4n) {
+    margin-right: 0px;
+  }
+}
+
+.visa {
+  background: url("img/visa.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.yandex {
+  background: url("img/yandex.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.paypal {
+  background: url("img/paypal.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.webmoney {
+  background: url("img/webmoney.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.qiwi {
+  background: url("img/qiwi.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }

@@ -7,7 +7,7 @@ const initialState = {
     itemTime: [
         {
             id: 1,
-            text: '1text',
+            text: '2 years',
             active: false,
             disable: false,
             time: '2 года',
@@ -16,7 +16,7 @@ const initialState = {
         },
         {
             id: 2,
-            text: '2text',
+            text: '1 year',
             active: false,
             disable: false,
             time: '1 год',
@@ -25,7 +25,7 @@ const initialState = {
         },
         {
             id: 3,
-            text: '3text',
+            text: '6 months',
             active: false,
             disable: false,
             time: '6 месяцев',

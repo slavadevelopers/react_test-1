@@ -8,7 +8,7 @@ export default class App extends React.Component {
     
     render() {
         return (
-            <div>
+            <div className="app d-flex flex-column h-100">
                 <Header />
                 { this.props.main }
                 <Footer />

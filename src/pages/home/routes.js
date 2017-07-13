@@ -3,5 +3,5 @@ import { Route } from 'react-router';
 import HomePage from './home';
 
 export default (
-    <Route component={ HomePage } path={ HomePage.path } />
+    <Route exact component={ HomePage } path={ HomePage.path } />
 );
